@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "cliente.h"
+#include "publicacion.h"
 #include "utn.h"
 #define QTY 10
 #define OCUPADO 0
@@ -10,6 +11,28 @@
 static int buscarLugarLibre(Cliente* array,int limite);
 static int proximoId();
 
+int cliente_mostrarPorId(Cliente* array,int limite,int idCliente)
+{
+    int retorno = -1;
+    int i;
+    int flag=0;
+    if(limite > 0 && array != NULL)
+    {
+        retorno = 0;
+        for(i=0;i<limite;i++)
+        {
+            if(!array[i].isEmpty && array[i].idCliente == idCliente)
+            {
+               printf("\nNombre: %s - Apellido: %s - Cuit %s - ID: %d ",array[i].nombre,array[i].apellido,array[i].cuit,array[i].idCliente);
+               flag=1;
+            }
+        }
+        if(!flag){
+            printf("\nNo hay datos ingresados!");
+        }
+    }
+    return retorno;
+}
 int cliente_altaForzada(Cliente* array,int limite,char* nombre,char* apellido,char* cuit)
 {
     int retorno = -1;

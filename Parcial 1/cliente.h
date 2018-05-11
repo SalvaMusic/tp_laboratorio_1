@@ -22,6 +22,7 @@ int cliente_mostrarDebug(Cliente* array,int limite);
 int cliente_alta(Cliente* array,int limite);
 int cliente_modificacion(Cliente* array,int limite, int id);
 int cliente_modificacionCase(Cliente* array,int sizeArray,int id);
+int cliente_mostrarPorId(Cliente* array,int limite,int idCliente);
 
 int cliente_ordenar(Cliente* array,int limite, int orden);
 
