@@ -1,0 +1,155 @@
+# depslib dependency file v1.0
+1525975052 source:c:\users\windows\documents\utn\programacion y laboratorio 1\template practica parcial\template\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"producto.h"
+	"proveedores.h"
+	"utn.h"
+	"informe.h"
+
+1525974068 c:\users\windows\documents\utn\programacion y laboratorio 1\template practica parcial\template\producto.h
+
+1525942429 c:\users\windows\documents\utn\programacion y laboratorio 1\template practica parcial\template\proveedores.h
+
+1525970930 c:\users\windows\documents\utn\programacion y laboratorio 1\template practica parcial\template\utn.h
+
+1525973839 source:c:\users\windows\documents\utn\programacion y laboratorio 1\template practica parcial\template\producto.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"producto.h"
+	"utn.h"
+
+1525964766 source:c:\users\windows\documents\utn\programacion y laboratorio 1\template practica parcial\template\proveedores.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"proveedores.h"
+	"utn.h"
+
+1525970930 source:c:\users\windows\documents\utn\programacion y laboratorio 1\template practica parcial\template\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+
+1525975012 source:c:\users\windows\documents\utn\programacion y laboratorio 1\template practica parcial\template\informe.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"informe.h"
+	"utn.h"
+	"Producto.h"
+	"proveedores.h"
+
+1525974503 c:\users\windows\documents\utn\programacion y laboratorio 1\template practica parcial\template\informe.h
+	"proveedores.h"
+	"producto.h"
+
+1525976334 source:c:\users\windows\documents\utn\programacion y laboratorio 1\template para parcial\template\informe.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"informe.h"
+	"utn.h"
+	"gasper.h"
+	"fantasma.h"
+
+1525976317 c:\users\windows\documents\utn\programacion y laboratorio 1\template para parcial\template\informe.h
+	"fantasma.h"
+	"gasper.h"
+
+1525970930 c:\users\windows\documents\utn\programacion y laboratorio 1\template para parcial\template\utn.h
+
+1525976317 source:c:\users\windows\documents\utn\programacion y laboratorio 1\template para parcial\template\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"gasper.h"
+	"fantasma.h"
+	"utn.h"
+	"informe.h"
+
+1525970930 source:c:\users\windows\documents\utn\programacion y laboratorio 1\template para parcial\template\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+
+1525976317 source:c:\users\windows\documents\utn\programacion y laboratorio 1\template para parcial\template\fantasma.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"fantasma.h"
+	"utn.h"
+
+1525976317 c:\users\windows\documents\utn\programacion y laboratorio 1\template para parcial\template\fantasma.h
+
+1525976317 c:\users\windows\documents\utn\programacion y laboratorio 1\template para parcial\template\gasper.h
+
+1525976378 source:c:\users\windows\documents\utn\programacion y laboratorio 1\template para parcial\template\gasper.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"gasper.h"
+	"utn.h"
+
+1525987656 source:d:\template para parcial\template\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+
+1525987656 d:\template para parcial\template\utn.h
+
+1525994261 source:d:\template para parcial\template\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"cliente.h"
+	"utn.h"
+
+1525994261 d:\template para parcial\template\cliente.h
+
+1525991720 source:d:\template para parcial\template\informe.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"informe.h"
+	"utn.h"
+	"publicacion.h"
+	"cliente.h"
+
+1525989212 d:\template para parcial\template\informe.h
+	"cliente.h"
+	"publicacion.h"
+
+1525996941 d:\template para parcial\template\publicacion.h
+	"cliente.h"
+
+1525995538 source:d:\template para parcial\template\publicacion.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"publicacion.h"
+	"cliente.h"
+	"utn.h"
+
+1525996930 source:d:\template para parcial\template\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"publicacion.h"
+	"cliente.h"
+	"utn.h"
+
