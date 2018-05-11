@@ -1,0 +1,58 @@
+# depslib dependency file v1.0
+1525036625 source:c:\users\windows\documents\programacion y laboratorio 1\tp_2_cascara\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+
+1525036625 c:\users\windows\documents\programacion y laboratorio 1\tp_2_cascara\utn.h
+
+1525291539 source:c:\users\windows\documents\programacion y laboratorio 1\tp_2_cascara\main.c
+	<stdio.h>
+	<stdlib.h>
+	"persona.h"
+	"funciones.h"
+
+1525290503 c:\users\windows\documents\programacion y laboratorio 1\tp_2_cascara\persona.h
+
+1525291557 source:c:\users\windows\documents\programacion y laboratorio 1\tp_2_cascara\persona.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"persona.h"
+	"funciones.h"
+
+1525036625 c:\users\windows\documents\programacion y laboratorio 1\tp_2_cascara\funciones.h
+
+1525289556 source:c:\users\windows\documents\programacion y laboratorio 1\tp_2_cascara\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"funciones.h"
+
+1525289556 source:c:\users\windows\documents\utn\programacion y laboratorio 1\tp_2_cascara\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"funciones.h"
+
+1525036625 c:\users\windows\documents\utn\programacion y laboratorio 1\tp_2_cascara\funciones.h
+
+1525291557 source:c:\users\windows\documents\utn\programacion y laboratorio 1\tp_2_cascara\persona.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"persona.h"
+	"funciones.h"
+
+1525290503 c:\users\windows\documents\utn\programacion y laboratorio 1\tp_2_cascara\persona.h
+
+1525291680 source:c:\users\windows\documents\utn\programacion y laboratorio 1\tp_2_cascara\main.c
+	<stdio.h>
+	<stdlib.h>
+	"persona.h"
+	"funciones.h"
+
