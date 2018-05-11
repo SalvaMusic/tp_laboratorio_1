@@ -5,8 +5,8 @@
 #include "publicacion.h"
 #include "cliente.h"
 #include "utn.h"
-#define QTY 10
-#define QTYP 20
+#define QTY 100
+#define QTYP 1000
 
 int main()
 {
@@ -14,6 +14,7 @@ int main()
     Publicacion arrayPublicacion[QTY];
     int menu;
     int auxiliarId;
+    int idCliente;
 
     publicacion_init(arrayPublicacion,QTY);
     cliente_init(arrayCliente,QTY);
@@ -66,10 +67,17 @@ int main()
                 break;
             case 5:
                 printf("\nPAUSAR PUBLICACION:");
-                publicacion_Listar(arrayPublicacion,QTYP);
+                //publicacion_Listar(arrayPublicacion,QTYP);
                 getValidInt("\nIngrese ID de Publicacion: ","\nNumero invalido\n",&auxiliarId,0,200,2);
-                publicacion_listarPorCliente(arrayPublicacion,QTYP,auxiliarId);
-
+                publicacion_devolverIdCliente(arrayPublicacion,QTYP,auxiliarId,&idCliente);
+                cliente_mostrarPorId(arrayCliente,QTY,idCliente);
+                if(getChar("\nDesea confirmar la pausa de la publicacion (s/n): ")=='s'){
+                    publicacion_pausa(arrayPublicacion,QTYP,auxiliarId);
+                    printf("\nPausa Exitosa");
+                    }else{
+                        printf("\nOperacion Cancelada\n");
+                    }
+                publicacion_pausa(arrayPublicacion,QTYP,auxiliarId);
                 break;
             case 6:
                 printf("\nMOSTRAR DEBUG:");

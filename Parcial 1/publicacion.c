@@ -7,11 +7,26 @@
 #define QTY 10
 #define OCUPADO 0
 #define LIBRE 1
+#define PAUSA 2
 
 static int buscarLugarLibre(Publicacion* array,int limite);
 static int proximoId();
 
+int publicacion_pausa(Publicacion* array,int limite, int id)
+{
 
+    int retorno = -1;
+    int indice;
+    indice = publicacion_buscarPorId(array,limite,id);
+    if(indice >= 0)
+    {
+        retorno = 0;
+        array[indice].isEmpty = PAUSA;
+    }else{
+        printf("\nID no encontrado!");
+    }
+    return retorno;
+}
 int publicacion_BajaCliente(Publicacion* array,int limite, int idCliente)
 {
     int retorno = -1;

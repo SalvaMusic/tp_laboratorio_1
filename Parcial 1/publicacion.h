@@ -23,6 +23,7 @@ int publicacion_modificacionCase(Publicacion* array,int sizeArray,int id);
 int publicacion_listarPorCliente(Publicacion* array,int limite,int idCliente);
 int publicacion_BajaCliente(Publicacion* array,int limite, int idCliente);
 int publicacion_devolverIdCliente(Publicacion* array,int limite,int idPublicacion,int*indexCliente);
+int publicacion_pausa(Publicacion* array,int limite, int id);
 
 int publicacion_ordenarNombre(Publicacion* array,int limite, int orden);
 int publicacion_ordenarId(Publicacion* array,int limite, int orden);
