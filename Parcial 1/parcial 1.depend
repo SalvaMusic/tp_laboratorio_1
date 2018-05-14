@@ -153,3 +153,81 @@
 	"cliente.h"
 	"utn.h"
 
+1526051964 source:c:\users\liliana\documents\tp_laboratorio_1-master\parcial 1\publicacion.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"publicacion.h"
+	"cliente.h"
+	"utn.h"
+
+1526051964 c:\users\liliana\documents\tp_laboratorio_1-master\parcial 1\publicacion.h
+	"cliente.h"
+
+1526051964 c:\users\liliana\documents\tp_laboratorio_1-master\parcial 1\cliente.h
+
+1526051964 c:\users\liliana\documents\tp_laboratorio_1-master\parcial 1\utn.h
+
+1526051964 source:c:\users\liliana\documents\tp_laboratorio_1-master\parcial 1\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+
+1526249453 source:c:\users\liliana\documents\tp_laboratorio_1-master\parcial 1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"publicacion.h"
+	"cliente.h"
+	"utn.h"
+
+1526252178 source:c:\users\liliana\documents\tp_laboratorio_1-master\parcial 1\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"cliente.h"
+	"publicacion.h"
+	"utn.h"
+
+1526324879 source:c:\users\windows\desktop\parcial 1\publicacion.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"publicacion.h"
+	"cliente.h"
+	"utn.h"
+
+1526323551 c:\users\windows\desktop\parcial 1\publicacion.h
+	"cliente.h"
+
+1526051964 c:\users\windows\desktop\parcial 1\cliente.h
+
+1526316650 c:\users\windows\desktop\parcial 1\utn.h
+
+1526316650 source:c:\users\windows\desktop\parcial 1\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+
+1526324944 source:c:\users\windows\desktop\parcial 1\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"cliente.h"
+	"publicacion.h"
+	"utn.h"
+
+1526324495 source:c:\users\windows\desktop\parcial 1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"publicacion.h"
+	"cliente.h"
+	"utn.h"
+

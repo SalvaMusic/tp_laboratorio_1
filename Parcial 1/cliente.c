@@ -23,7 +23,7 @@ int cliente_mostrarPorId(Cliente* array,int limite,int idCliente)
         {
             if(!array[i].isEmpty && array[i].idCliente == idCliente)
             {
-               printf("\nNombre: %s - Apellido: %s - Cuit %s - ID: %d ",array[i].nombre,array[i].apellido,array[i].cuit,array[i].idCliente);
+               printf("\%s %s - Cuit %s - ID: %d ",array[i].nombre,array[i].apellido,array[i].cuit,array[i].idCliente);
                flag=1;
             }
         }
@@ -96,11 +96,22 @@ int cliente_baja(Cliente* array,int limite, int id)
 
     int retorno = -1;
     int indice;
-    indice = cliente_buscarPorId(array,limite,id);
-    if(indice >= 0)
-    {
-        retorno = 0;
-        array[indice].isEmpty = LIBRE;
+    char continuar;
+    if(limite > 0 && array != NULL){
+        indice = cliente_buscarPorId(array,limite,id);
+        if(indice >= 0){
+            printf("\nDesea bajar al usuario '%s'?  (s/n) ",array[indice].nombre);
+            fflush(stdin);
+            scanf("%c", &continuar);
+            if(continuar=='s'){
+                array[indice].isEmpty = LIBRE;
+                retorno = 0;
+            }else{
+                printf("\nOperacion Cancelada\n");
+            }
+        }else{
+            printf("\nID No encontrado!\n");
+        }
     }
     return retorno;
 }
@@ -117,13 +128,14 @@ int cliente_mostrar(Cliente* array,int limite)
         {
             if(!array[i].isEmpty)
             {
-               printf("\nNombre: %s - Apellido: %s - Cuit %s - ID: %d ",array[i].nombre,array[i].apellido,array[i].cuit,array[i].idCliente);
+               printf("\n%s %s - Cuit %s - ID: %d ",array[i].nombre,array[i].apellido,array[i].cuit,array[i].idCliente);
                flag=1;
             }
         }
         if(!flag){
             printf("\nNo hay datos ingresados!");
         }
+        printf("\n");
     }
     return retorno;
 }
@@ -162,9 +174,9 @@ int cliente_alta(Cliente* array,int limite)
             id = proximoId();
             if(!getValidString("\nIngrese Nombre: ","\nError! Caracteres no validos","\nSe excedio de caracteres", nombre,50,2))
             {
-                if(!getValidString("\nIngrese Apellido: ","\nError! Caracteres no validos","\nSe excedio de caracteres", apellido,50,2))
+                if(!getValidString("Ingrese Apellido: ","\nError! Caracteres no validos","\nSe excedio de caracteres", apellido,50,2))
                 {
-                    if(getStringNumeros("\nIngrese Cuit: ", cuit))
+                    if(getStringNumeros("Ingrese Cuit: ", cuit))
                     {
                         retorno = 0;
                         strcpy(array[indice].nombre,nombre);
@@ -202,7 +214,6 @@ int cliente_modificacion(Cliente* array,int limite, int id)
                     printf("\nOperacion Cancelada!");
                 }
             }
-
         }else{
             printf("\nID no encontrado");
         }
@@ -239,11 +250,15 @@ static int proximoId()
 
 int cliente_modificacionCase(Cliente* array,int sizeArray,int id)
 {
+    char nombre[50];
+    char apellido[50];
+    char cuit[50];
     int indice;
     char continuar;
     int modificar;
     int retorno=-1;
-    char auxChar;
+
+
 
     if(sizeArray > 0 && array != NULL)
     {
@@ -260,27 +275,21 @@ int cliente_modificacionCase(Cliente* array,int sizeArray,int id)
                 switch(modificar)
                 {
                     case 1:
-                        getString("\nIngrese nombre: " ,  &auxChar);
-                        if(getChar("\nDesea guardar esta modificacion? (s/n): ")=='s'){
-                            strcpy(array[indice].nombre,&auxChar);
-                            printf("\nOperacion Exitosa");
-                        }
-                        else{
-                            printf("\nOperacion cancelada!");
-                        }
-                        getString("\nIngrese apellido: " ,  &auxChar);
-                        if(getChar("\nDesea guardar esta modificacion? (s/n): ")=='s'){
-                            strcpy(array[indice].apellido,&auxChar);
-                            printf("\nOperacion Exitosa");
-                        }
-                        else{
-                            printf("\nOperacion cancelada!");
+                        if(!getValidString("Ingrese Nombre: ","\nError! Caracteres no validos","\nSe excedio de caracteres", nombre,50,2) &&
+                           !getValidString("Ingrese Apellido: ","\nError! Caracteres no validos","\nSe excedio de caracteres", apellido,50,2)){
+                            if(getChar("\nDesea guardar esta modificacion? (s/n): ")=='s'){
+                                strcpy(array[indice].nombre, nombre);
+                                strcpy(array[indice].apellido, apellido);
+                                printf("\nOperacion Exitosa");
+                            }else{
+                                printf("\nOperacion cancelada!");
+                            }
                         }
                         break;
                     case 2:
-                        getString("\nIngrese su nuevo Cuit: ", &auxChar);
+                        getString("Ingrese su nuevo Cuit: ", cuit);
                         if(getChar("\nDesea guardar esta modificacion? (s/n): ")=='s'){
-                            strcpy(array[indice].cuit,&auxChar);
+                            strcpy(array[indice].cuit, cuit);
                             printf("\nOperacion Exitosa");
                         }else{
                             printf("\nOperacion cancelada!");

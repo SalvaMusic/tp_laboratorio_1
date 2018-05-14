@@ -236,6 +236,7 @@ int getStringLetras(char mensaje[],char input[])
     return 0;
 }
 
+
 /**
  * \brief Solicita un texto numérico al usuario y lo devuelve
  * \param mensaje Es el mensaje a ser mostrado

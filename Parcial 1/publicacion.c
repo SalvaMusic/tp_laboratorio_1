@@ -12,6 +12,23 @@
 static int buscarLugarLibre(Publicacion* array,int limite);
 static int proximoId();
 
+int publicacion_reanudar(Publicacion* array,int limite, int id)
+{
+
+    int retorno = -1;
+    int indice;
+    indice = publicacion_buscarPorId(array,limite,id);
+
+    if(indice >= 0)
+    {
+        retorno = 0;
+        array[indice].isEmpty = OCUPADO;
+    }else{
+        printf("\nID no encontrado!");
+    }
+    return retorno;
+}
+
 int publicacion_pausa(Publicacion* array,int limite, int id)
 {
 
@@ -31,22 +48,22 @@ int publicacion_BajaCliente(Publicacion* array,int limite, int idCliente)
 {
     int retorno = -1;
     int i;
-    if(limite > 0 && array != NULL)
-    {
-        retorno = -2;
+
         for(i=0;i<limite;i++)
         {
             if(!array[i].isEmpty && array[i].idCliente == idCliente)
             {
+                array[i].isEmpty = LIBRE;
                 retorno=0;
-                publicacion_baja(array,limite,array[i].idPublicacion);
+                printf("\n\t Entra al IF");
+
             }
         }
-    }
+
     return retorno;
 }
 
-int publicacion_altaForzada(Publicacion* array,int limite,char* descripcion, int rubro, Cliente* arrayC,int limiteC, int idCliente)
+int publicacion_altaForzada(Publicacion* array,int limite,char* descripcion, int rubro, int estado, Cliente* arrayC,int limiteC, int idCliente)
 {
     int retorno = -1;
     int i;
@@ -63,7 +80,7 @@ int publicacion_altaForzada(Publicacion* array,int limite,char* descripcion, int
             //------------------------------
             //------------------------------
             array[i].idPublicacion = proximoId();
-            array[i].isEmpty = OCUPADO;
+            array[i].isEmpty = estado;
         }
         retorno = 0;
     }
@@ -94,7 +111,7 @@ int publicacion_buscarPorId(Publicacion* array,int limite, int id)
         retorno = -2;
         for(i=0;i<limite;i++)
         {
-            if(array[i].isEmpty == OCUPADO && array[i].idPublicacion == id)
+            if((array[i].isEmpty == OCUPADO || array[i].isEmpty == PAUSA) && array[i].idPublicacion == id)
             {
                 retorno = i;
                 break;
@@ -119,11 +136,38 @@ int publicacion_baja(Publicacion* array,int limite, int id)
     }
     return retorno;
 }
-
-int publicacion_Listar(Publicacion* array,int limite)
+int publicacion_listarPausadas(Publicacion* array,int limite)
 {
     int retorno = -1;
     int i;
+    int flag=1;
+
+    if(limite > 0 && array != NULL)
+    {
+        retorno = -2;
+        for(i=0;i<limite;i++)
+        {
+            if(array[i].isEmpty == 2)
+            {
+                retorno=0;
+                printf("\nDescripcion: %s - Rubro %d - ID: %d", array[i].descripcion,array[i].rubro,array[i].idPublicacion);
+                flag=0;
+            }
+        }
+        printf("\n");
+        if (flag){
+            printf("\nNo hay publicaciones Pausadas!\n");
+            retorno = 1;
+        }
+    }
+    return retorno;
+}
+
+int publicacion_listarActivas(Publicacion* array,int limite)
+{
+    int retorno = -1;
+    int i;
+    int flag=1;
     if(limite > 0 && array != NULL)
     {
         retorno = -2;
@@ -133,8 +177,13 @@ int publicacion_Listar(Publicacion* array,int limite)
             {
                 retorno=0;
                 printf("\nDescripcion: %s - Rubro %d - ID: %d", array[i].descripcion,array[i].rubro,array[i].idPublicacion);
-
+                flag=0;
             }
+        }
+        printf("\n");
+        if (flag){
+            printf("\nNo hay publicaciones Activas!\n");
+            retorno = 1;
         }
     }
     return retorno;
@@ -163,18 +212,40 @@ int publicacion_listarPorCliente(Publicacion* array,int limite,int idCliente)
     }
     return retorno;
 }
-int publicacion_devolverIdCliente(Publicacion* array,int limite,int idPublicacion,int*indexCliente)
+int publicacion_devolverIdCliente(Publicacion* array,int limite,int idPublicacion,int *idCliente)
 {
     int retorno = -1;
     int i;
     if(limite > 0 && array != NULL)
     {
-        retorno = 0;
+        retorno = -2;
         for(i=0;i<limite;i++)
         {
-            if(!array[i].isEmpty && array[i].idPublicacion == idPublicacion)
+            if((!array[i].isEmpty || array[i].isEmpty == 2) && array[i].idPublicacion == idPublicacion)
             {
-                *indexCliente = array[i].idCliente;
+                *idCliente = array[i].idCliente;
+                retorno = 0;
+                break;
+            }
+        }
+    }
+    return retorno;
+}
+
+int publicacion_devolverEstado(Publicacion* array,int limite,int idPublicacion)
+{
+    int retorno = -1;
+    int i;
+    if(limite > 0 && array != NULL)
+    {
+        retorno = -2;
+        for(i=0;i<limite;i++)
+        {
+            if(!array[i].isEmpty && array[i].idPublicacion == idPublicacion){
+                retorno = 0;
+                break;
+            }else if (array[i].isEmpty == PAUSA && array[i].idPublicacion == idPublicacion){
+                retorno = 1;
                 break;
             }
         }
