@@ -51,12 +51,10 @@ int publicacion_BajaCliente(Publicacion* array,int limite, int idCliente)
 
         for(i=0;i<limite;i++)
         {
-            if(!array[i].isEmpty && array[i].idCliente == idCliente)
+            if(!array[i].isEmpty || array[i].isEmpty == 2 && array[i].idCliente == idCliente)
             {
                 array[i].isEmpty = LIBRE;
                 retorno=0;
-                printf("\n\t Entra al IF");
-
             }
         }
 
@@ -136,6 +134,7 @@ int publicacion_baja(Publicacion* array,int limite, int id)
     }
     return retorno;
 }
+
 int publicacion_listarPausadas(Publicacion* array,int limite)
 {
     int retorno = -1;
@@ -188,6 +187,165 @@ int publicacion_listarActivas(Publicacion* array,int limite)
     }
     return retorno;
 }
+
+int publicacion_contarTotalPorCliente(Publicacion* array,int limite,int idCliente)
+{
+    int retorno = -1;
+    int i, cantidadPublicaciones=0;
+    int flag=0;
+
+    if(limite > 0 && array != NULL)
+    {
+        retorno = -2;
+        for(i=0;i<limite;i++)
+        {
+            if((!array[i].isEmpty || array[i].isEmpty == 2) && array[i].idCliente == idCliente){
+                cantidadPublicaciones++;
+                flag=1;
+                retorno=cantidadPublicaciones;
+            }
+        }
+        if(!flag){
+            retorno = 0;
+        }
+    }
+    return retorno;
+}
+
+int publicacion_contarPausadasPorCliente(Publicacion* array,int limite,int idCliente)
+{
+    int retorno = -1;
+    int i, cantidadPublicaciones=0;
+    int flag=0;
+
+    if(limite > 0 && array != NULL)
+    {
+        retorno = -2;
+        for(i=0;i<limite;i++)
+        {
+            if(array[i].isEmpty == 2 && array[i].idCliente == idCliente){
+                cantidadPublicaciones++;
+                flag=1;
+                retorno=cantidadPublicaciones;
+            }
+        }
+        if(!flag){
+            retorno = 0;
+        }
+    }
+    return retorno;
+}
+
+int publicacion_contarAcivasPorCliente(Publicacion* array,int limite,int idCliente)
+{
+    int retorno = -1;
+    int i, cantidadPublicaciones=0;
+    int flag=0;
+
+    if(limite > 0 && array != NULL)
+    {
+        retorno = -2;
+        for(i=0;i<limite;i++)
+        {
+            if(!array[i].isEmpty && array[i].idCliente == idCliente){
+                cantidadPublicaciones++;
+                flag=1;
+                retorno=cantidadPublicaciones;
+            }
+        }
+        if(!flag){
+            retorno = 0;
+        }
+    }
+    return retorno;
+}
+
+int publicacion_ordenarRubro(Publicacion* array,int limite, int orden)
+{
+    int retorno = -1;
+    int flagSwap;
+    int i;
+    Publicacion auxiliar;
+
+    if(limite > 0 && array != NULL)
+    {
+        retorno = 0;
+        do
+        {
+            flagSwap = 0;
+            for(i=0;i<limite-1;i++)
+            {
+                if(array[i].isEmpty == OCUPADO && array[i+1].isEmpty == OCUPADO )
+                {
+                    if((array[i].rubro>array[i+1].rubro && !orden) || (array[i].rubro<array[i+1].rubro && orden)) //<------------
+                    {
+                        auxiliar = array[i];
+                        array[i] = array[i+1];
+                        array[i+1] = auxiliar;
+                        flagSwap = 1;
+                    }
+                }
+            }
+        }while(flagSwap);
+    }
+    return retorno;
+}
+
+int publicacion_rubroMayorMenor(Publicacion* array,int limite,int *mayor, int *menor)
+{
+    int retorno = -1;
+    int i, contPublicaciones=0, maxPublicaciones=0, minPublicaciones=0,ultimoRubro=-1;
+
+    if(limite > 0 && array != NULL)
+    {
+        retorno = -2;
+        for(i=0;i<limite;i++)
+        {
+            if(!array[i].isEmpty){
+                if(array[i].rubro == ultimoRubro){
+                    contPublicaciones++;
+                }else{
+                    ultimoRubro=array[i].rubro;
+                    contPublicaciones=1;
+                }
+                if(contPublicaciones>maxPublicaciones){
+                    maxPublicaciones=contPublicaciones;
+                    *mayor=array[i].rubro;
+                }else if(contPublicaciones<minPublicaciones){
+                    minPublicaciones=contPublicaciones;
+                    *menor=array[i].rubro;
+                }
+            }
+        }
+    }
+    return retorno;
+
+}
+
+int publicacion_contarAcivasPorRubro(Publicacion* array,int limite,int rubro)
+{
+    int retorno = -1;
+    int i, cantidadPublicaciones=0;
+    int flag=0;
+
+    if(limite > 0 && array != NULL)
+    {
+        retorno = -2;
+        for(i=0;i<limite;i++)
+        {
+            if(!array[i].isEmpty && array[i].rubro == rubro){
+                cantidadPublicaciones++;
+                flag=1;
+                retorno=cantidadPublicaciones;
+            }
+        }
+        if(!flag){
+            retorno = 0;
+        }
+    }
+    return retorno;
+}
+
 int publicacion_listarPorCliente(Publicacion* array,int limite,int idCliente)
 {
     int retorno = -1;
@@ -196,7 +354,6 @@ int publicacion_listarPorCliente(Publicacion* array,int limite,int idCliente)
     if(limite > 0 && array != NULL)
     {
         retorno = 0;
-
         for(i=0;i<limite;i++)
         {
             if(!array[i].isEmpty && array[i].idCliente == idCliente)
@@ -212,6 +369,7 @@ int publicacion_listarPorCliente(Publicacion* array,int limite,int idCliente)
     }
     return retorno;
 }
+
 int publicacion_devolverIdCliente(Publicacion* array,int limite,int idPublicacion,int *idCliente)
 {
     int retorno = -1;

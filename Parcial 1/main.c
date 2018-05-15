@@ -5,6 +5,7 @@
 #include "publicacion.h"
 #include "cliente.h"
 #include "utn.h"
+#include "informe.h"
 #define QTY 100
 #define QTYP 1000
 
@@ -15,7 +16,6 @@ int main()
     int menu;
     int auxiliarId;
     int idCliente;
-    int i;
 
     publicacion_init(arrayPublicacion,QTYP);
     cliente_init(arrayCliente,QTY);
@@ -25,21 +25,13 @@ int main()
     cliente_altaForzada(arrayCliente,QTY,"Yesica","More","5155685486");
 
     publicacion_altaForzada(arrayPublicacion,QTYP,"VENDO AUTOS",2,0,arrayCliente,QTY,0);
-    publicacion_altaForzada(arrayPublicacion,QTYP,"COMPRO AUTOS",2,0,arrayCliente,QTY,0);
+    publicacion_altaForzada(arrayPublicacion,QTYP,"COMPRO AUTOS",2,2,arrayCliente,QTY,1);
     publicacion_altaForzada(arrayPublicacion,QTYP,"VENDO CASAS",1,0,arrayCliente,QTY,1);
-    publicacion_altaForzada(arrayPublicacion,QTYP,"VENDO ROPA",1,2,arrayCliente,QTY,2);
-
-    for(i=0;i<QTY;i++)
-        {
-            if(!arrayCliente[i].isEmpty)
-            {
-               printf("\nNombre: %s - Apellido: %s - Cuit %s - ID: %d ",arrayCliente[i].nombre,arrayCliente[i].apellido,arrayCliente[i].cuit,arrayCliente[i].idCliente);
-            }
-        }
+    publicacion_altaForzada(arrayPublicacion,QTYP,"VENDO ROPA",1,0,arrayCliente,QTY,2);
 
     do
     {
-        getValidInt("\n1.Alta de Cliente\n2.Modicicar datos de Cliente\n3.Baja de Cliente\n4.Publicar\n5.Pausar Publicacion\n6.Mostrar Debug\n9.Salir\n","\nNo valida\n",&menu,1,9,1);
+        getValidInt("\n1.Alta de Cliente\n2.Modicicar datos de Cliente\n3.Baja de Cliente\n4.Publicar\n5.Pausar Publicacion\n6.Reanudar Publicacion\n7.Imprimir Clientes\n8.Imprimir Publicaciones\n9.Informar Clientes\n10.Informar Publicaciones\n11.Salir\n","\nNo valida\n",&menu,1,11,1);
         switch(menu)
         {
             case 1:
@@ -90,7 +82,6 @@ int main()
                         }
                     }
                 }
-
                 break;
             case 6:
                 printf("\n\tREANUDAR PUBLICACION:");
@@ -110,11 +101,25 @@ int main()
                         }
                     }
                 }
-
+                case 7:
+                printf("\n\tIMPRIMIR CLIENTES:\n");
+                informe_imprimirCliente(arrayCliente,QTY,arrayPublicacion,QTYP);
+                break;
+                case 8:
+                printf("\n\tIMPRIMIR PUBLICACIONES:\n");
+                informe_imprimirPublicacion(arrayCliente,QTY,arrayPublicacion,QTYP);
+                break;
+                case 9:
+                printf("\n\tINFORMAR CLIENTES:\n");
+                informe_clienteFinal(arrayCliente,QTY,arrayPublicacion,QTYP);
+                break;
+                case 10:
+                printf("\n\tINFORMAR PUBLICACIONES:\n");
+                informe_publicacionFinal(arrayCliente,QTY,arrayPublicacion,QTYP);
                 break;
         }
 
-    }while(menu != 9);
+    }while(menu != 11);
 
     return 0;
 }

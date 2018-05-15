@@ -9,8 +9,7 @@ typedef struct
     int idCliente;
     int isEmpty;
 }Cliente;
-#endif
-
+#endif  //CLIENTE_H_INCLUDED
 
 int cliente_init(Cliente* array,int limite);
 int cliente_buscarPorId(Cliente* array,int limite, int id);

@@ -100,7 +100,7 @@ int cliente_baja(Cliente* array,int limite, int id)
     if(limite > 0 && array != NULL){
         indice = cliente_buscarPorId(array,limite,id);
         if(indice >= 0){
-            printf("\nDesea bajar al usuario '%s'?  (s/n) ",array[indice].nombre);
+            printf("\nDesea bajar al usuario '%s' y sus publicaciones?  (s/n) ",array[indice].nombre);
             fflush(stdin);
             scanf("%c", &continuar);
             if(continuar=='s'){
@@ -139,6 +139,8 @@ int cliente_mostrar(Cliente* array,int limite)
     }
     return retorno;
 }
+
+
 
 int cliente_mostrarDebug(Cliente* array,int limite)
 {
