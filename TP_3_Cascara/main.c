@@ -16,8 +16,8 @@ int main()
     char seguir = 's';
     int opcion = 0;
 
-    funciones_cargarArchivo(arrayPunterosEMovie,&qtyActualArrayPunterosEMovie,QTY,"archivoPeliculas.bin");
-    arrayPunterosEMovie [0] = eMovie_newParametros("Ralph el Demoledor","Comica",101,"La vida dentro de los videojuegos",8,"http://culto.latercera.com/wp-content/uploads/2018/02/00000000000000000banner-rompe-ralph-1-900x600.jpg",0);
+    //funciones_cargarArchivo(arrayPunterosEMovie,&qtyActualArrayPunterosEMovie,QTY,"archivoPeliculas.bin");
+    *arrayPunterosEMovie = eMovie_newParametros("Ralph el Demoledor","Comica",101,"La vida dentro de los videojuegos",8,"http://culto.latercera.com/wp-content/uploads/2018/02/00000000000000000banner-rompe-ralph-1-900x600.jpg",0);
 
     while(seguir == 's')
     {
@@ -30,6 +30,7 @@ int main()
             case 1:
                 printf("\n\tAGREGAR PELICULA\n");
                 eMovie_agregarPelicula(arrayPunterosEMovie,&qtyActualArrayPunterosEMovie);
+                funciones_guardarArchivo(arrayPunterosEMovie,qtyActualArrayPunterosEMovie,"archivoPeliculas.bin");
                 system("pause");
                 break;
             case 2:
