@@ -1,0 +1,60 @@
+# depslib dependency file v1.0
+1527618196 source:c:\users\windows\downloads\tp_3_cascara\emovie.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"emovie.h"
+	"utn.h"
+
+1527620913 c:\users\windows\downloads\tp_3_cascara\emovie.h
+
+1526316650 c:\users\windows\downloads\tp_3_cascara\utn.h
+
+1526316650 source:c:\users\windows\downloads\tp_3_cascara\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+
+1527620598 source:c:\users\windows\downloads\tp_3_cascara\main.c
+	<stdio.h>
+	<stdlib.h>
+	"emovie.h"
+	"utn.h"
+
+1528139851 source:c:\users\familia pedrozo\downloads\clase-a-clase-master\tp_3_cascara\emovie.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"emovie.h"
+	"utn.h"
+
+1528137294 c:\users\familia pedrozo\downloads\clase-a-clase-master\tp_3_cascara\emovie.h
+
+1527816029 c:\users\familia pedrozo\downloads\clase-a-clase-master\tp_3_cascara\utn.h
+
+1527816029 source:c:\users\familia pedrozo\downloads\clase-a-clase-master\tp_3_cascara\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+
+1528139851 source:c:\users\familia pedrozo\downloads\clase-a-clase-master\tp_3_cascara\main.c
+	<stdio.h>
+	<stdlib.h>
+	"emovie.h"
+	"utn.h"
+	"funciones.h"
+
+1528139764 source:c:\users\familia pedrozo\downloads\clase-a-clase-master\tp_3_cascara\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"emovie.h"
+	"utn.h"
+	"funciones.h"
+
+1528134826 c:\users\familia pedrozo\downloads\clase-a-clase-master\tp_3_cascara\funciones.h
+
