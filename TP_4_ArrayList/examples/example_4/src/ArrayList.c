@@ -398,6 +398,35 @@ ArrayList* al_subList(ArrayList* this,int from,int to)
  * \return int Return (-1) if Error [pList or pList2 are NULL pointer]
  *                  - (0) if Not contains All - (1) if is contains All
  */
+/*
+int al_containsAll(ArrayList* this,ArrayList* this2)
+{
+    int returnAux = -1;
+    int i;
+    int NotThis = 0;
+
+    if (this != NULL && this2 != NULL)
+    {
+        if(al_len(this) == al_len(this2))
+        {
+            returnAux = 1;
+        }
+            for(i=0;i<=al_len(this);i++)
+            {
+                if(!al_contains(this2,this->pElements[i]))
+                {
+                    NotThis++;
+                }
+            }
+            if (NotThis > 0 && NotThis < al_len(this))
+            {
+                returnAux = 0;
+            }
+
+    }
+    return returnAux;
+}*/
+
 int al_containsAll(ArrayList* this,ArrayList* this2)
 {
     int returnAux = -1;
@@ -412,15 +441,12 @@ int al_containsAll(ArrayList* this,ArrayList* this2)
             {
                 if(!al_contains(this,this2->pElements[i]))
                 {
-
                     return returnAux;
                 }
             }
             returnAux = 1;
         }
-
     }
-
     return returnAux;
 }
 
