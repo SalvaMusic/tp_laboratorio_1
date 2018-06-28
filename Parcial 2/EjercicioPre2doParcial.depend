@@ -1,0 +1,45 @@
+# depslib dependency file v1.0
+1530226739 source:d:\segundo_parcial-20180628t122404z-001\segundo_parcial\ejercicio2doparcial\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1530224555 d:\segundo_parcial-20180628t122404z-001\segundo_parcial\ejercicio2doparcial\arraylist.h
+
+1530226798 source:d:\segundo_parcial-20180628t122404z-001\segundo_parcial\ejercicio2doparcial\empleado.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Empleado.h"
+	"utn.h"
+
+1530224798 d:\segundo_parcial-20180628t122404z-001\segundo_parcial\ejercicio2doparcial\empleado.h
+
+1530226826 source:d:\segundo_parcial-20180628t122404z-001\segundo_parcial\ejercicio2doparcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Empleado.h"
+	"ArrayList.h"
+	"Parser.h"
+
+1529584990 d:\segundo_parcial-20180628t122404z-001\segundo_parcial\ejercicio2doparcial\parser.h
+	"ArrayList.h"
+
+1530223583 source:d:\segundo_parcial-20180628t122404z-001\segundo_parcial\ejercicio2doparcial\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"Parser.h"
+	"Empleado.h"
+
+1530222614 source:d:\segundo_parcial-20180628t122404z-001\segundo_parcial\ejercicio2doparcial\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+
+1530222614 d:\segundo_parcial-20180628t122404z-001\segundo_parcial\ejercicio2doparcial\utn.h
+
